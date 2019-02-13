@@ -175,7 +175,7 @@ LOCAL_C_INCLUDES := \
         external/tinyalsa/include \
         $(call include-path-for, audio-effects) \
         $(call include-path-for, audio-route) \
-        hardware/qcom/audio/hal/audio_extn \
+        hardware/qcom/audio-caf-sdm845/hal/audio_extn \
         external/tinycompress/include
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DLKM)),true)
