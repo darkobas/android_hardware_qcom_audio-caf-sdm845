@@ -72,7 +72,7 @@ ifeq ($(TARGET_BOARD_AUTO),true)
   LOCAL_CFLAGS += -DPLATFORM_AUTO
 endif
 
-LOCAL_CFLAGS += -Wno-macro-redefined
+LOCAL_CFLAGS += -Wno-macro-redefined  -Wno-unused-parameter
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
 
@@ -177,6 +177,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_COMPRESS_VOIP)),true)
 endif
 
 endif
+
+LOCAL_SRC_FILES += audio_extn/spkr_dsm.c
 
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_EXTN_FORMATS)),true)
 LOCAL_CFLAGS += -DAUDIO_EXTN_FORMATS_ENABLED
@@ -439,7 +441,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_FFV)), true)
     LOCAL_SRC_FILES += audio_extn/ffv.c
 endif
 
-LOCAL_CFLAGS += -Wall -Werror
+LOCAL_CFLAGS += -Wall
+LOCAL_CFLAGS += -Wno-unused-variable -Wno-unused-function -Wno-missing-field-initializers
 
 LOCAL_COPY_HEADERS_TO   := mm-audio
 LOCAL_COPY_HEADERS      := audio_extn/audio_defs.h
