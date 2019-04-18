@@ -67,7 +67,7 @@ AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 
 ifneq ($(strip $(TARGET_USES_RRO)), true)
 #Audio Specific device overlays
-DEVICE_PACKAGE_OVERLAYS += hardware/qcom/audio/configs/common/overlay
+DEVICE_PACKAGE_OVERLAYS += hardware/qcom/audio-caf-sdm845/configs/common/overlay
 endif
 
 # Audio configuration file
@@ -76,7 +76,7 @@ PRODUCT_COPY_FILES += \
     device/qcom/common/media/audio_policy.conf:system/etc/audio_policy.conf
 else
 PRODUCT_COPY_FILES += \
-    hardware/qcom/audio/configs/sdm845/audio_policy.conf:system/etc/audio_policy.conf
+    hardware/qcom/audio-caf-sdm845/configs/sdm845/audio_policy.conf:system/etc/audio_policy.conf
 endif
 
 PRODUCT_COPY_FILES += \
